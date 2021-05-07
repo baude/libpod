@@ -193,27 +193,25 @@ func NetFlagsToNetOptions(cmd *cobra.Command) (*entities.NetOptions, error) {
 		return nil, err
 	}
 
-	if cmd.Flags().Changed("network") {
-		network, err := cmd.Flags().GetString("network")
-		if err != nil {
-			return nil, err
-		}
-
-		parts := strings.SplitN(network, ":", 2)
-
-		ns, cniNets, err := specgen.ParseNetworkNamespace(network, containerConfig.Containers.RootlessNetworking == "cni")
-		if err != nil {
-			return nil, err
-		}
-
-		if len(parts) > 1 {
-			opts.NetworkOptions = make(map[string][]string)
-			opts.NetworkOptions[parts[0]] = strings.Split(parts[1], ",")
-			cniNets = nil
-		}
-		opts.Network = ns
-		opts.CNINetworks = cniNets
+	network, err := cmd.Flags().GetString("network")
+	if err != nil {
+		return nil, err
 	}
+
+	parts := strings.SplitN(network, ":", 2)
+
+	ns, cniNets, err := specgen.ParseNetworkNamespace(network, containerConfig.Containers.RootlessNetworking == "cni")
+	if err != nil {
+		return nil, err
+	}
+
+	if len(parts) > 1 {
+		opts.NetworkOptions = make(map[string][]string)
+		opts.NetworkOptions[parts[0]] = strings.Split(parts[1], ",")
+		cniNets = nil
+	}
+	opts.Network = ns
+	opts.CNINetworks = cniNets
 
 	aliases, err := cmd.Flags().GetStringSlice("network-alias")
 	if err != nil {

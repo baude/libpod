@@ -3,7 +3,7 @@ github.com/Azure/go-ansiterm
 github.com/Azure/go-ansiterm/winterm
 # github.com/BurntSushi/toml v0.3.1
 github.com/BurntSushi/toml
-# github.com/Microsoft/go-winio v0.4.17
+# github.com/Microsoft/go-winio v0.5.0
 github.com/Microsoft/go-winio
 github.com/Microsoft/go-winio/backuptar
 github.com/Microsoft/go-winio/pkg/guid
@@ -91,7 +91,7 @@ github.com/containers/buildah/pkg/overlay
 github.com/containers/buildah/pkg/parse
 github.com/containers/buildah/pkg/rusage
 github.com/containers/buildah/util
-# github.com/containers/common v0.38.4
+# github.com/containers/common v0.38.5-0.20210525165358-f9e19464c48f
 github.com/containers/common/libimage
 github.com/containers/common/libimage/manifests
 github.com/containers/common/pkg/apparmor
@@ -102,6 +102,7 @@ github.com/containers/common/pkg/cgroupv2
 github.com/containers/common/pkg/chown
 github.com/containers/common/pkg/completion
 github.com/containers/common/pkg/config
+github.com/containers/common/pkg/defaultnet
 github.com/containers/common/pkg/filters
 github.com/containers/common/pkg/manifests
 github.com/containers/common/pkg/parse
@@ -192,7 +193,7 @@ github.com/containers/psgo/internal/dev
 github.com/containers/psgo/internal/host
 github.com/containers/psgo/internal/proc
 github.com/containers/psgo/internal/process
-# github.com/containers/storage v1.31.1
+# github.com/containers/storage v1.31.2
 github.com/containers/storage
 github.com/containers/storage/drivers
 github.com/containers/storage/drivers/aufs
